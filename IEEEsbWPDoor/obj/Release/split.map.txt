@@ -1,0 +1,17 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"scale-240"
+"ResourceDimensions"		"language-es-es"
+
+[Files]
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\split.pri"			"resources.pri"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\View\DataStorageView.xbf"			"View\DataStorageView.xbf"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\MainPage.xbf"			"MainPage.xbf"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\IEEEsbWPDoor.xr.xml"			"IEEEsbWPDoor.xr.xml"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\Assets\WideLogo.scale-240.png"			"Assets\WideLogo.scale-240.png"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\Assets\StoreLogo.scale-240.png"			"Assets\StoreLogo.scale-240.png"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\Assets\Square71x71Logo.scale-240.png"			"Assets\Square71x71Logo.scale-240.png"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\Assets\SplashScreen.scale-240.png"			"Assets\SplashScreen.scale-240.png"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\Assets\SmallLogo.scale-240.png"			"Assets\SmallLogo.scale-240.png"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\Assets\Logo.scale-240.png"			"Assets\Logo.scale-240.png"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\Assets\IEEE-white.png"			"Assets\IEEE-white.png"
+"C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\obj\Release\PackageLayout\App.xbf"			"App.xbf"

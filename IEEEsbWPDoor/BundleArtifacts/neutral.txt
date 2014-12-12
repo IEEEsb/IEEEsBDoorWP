@@ -1,0 +1,3 @@
+MainPackage=C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\bin\Release\IEEEsbWPDoor_2.9.0.1_Bundle\IEEEsbWPDoor_2.9.0.1_AnyCPU.appx
+SymbolPackage=C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\AppPackages\IEEEsbWPDoor_2.9.0.1_Test\IEEEsbWPDoor_2.9.0.1_AnyCPU.appxsym
+ResourcePack=C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\bin\Release\IEEEsbWPDoor_2.9.0.1_Bundle\IEEEsbWPDoor_2.9.0.1_scale-100.appx

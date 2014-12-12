@@ -1,0 +1,180 @@
+﻿<Page
+    x:Class="IEEEsbWPDoor.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IEEEsbWPDoor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:IEEEsbWPDoor.ViewModel"
+    xmlns:converters="using:IEEEsbWPDoor.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <vm:MainViewModel x:Key="MainViewModel"/>
+        <converters:BooleanToVisibility x:Key="BooleanToVisibility"/>
+        <converters:BooleanToInvisibility x:Key="BooleanToInvisibility"/>
+        <converters:BooleanToColor x:Key="BooleanToColor"/>
+        <Style TargetType="TextBox" x:Name="TextBox">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Name="Textblock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="28"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Name="Header">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="35"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Name="PrinterStatus">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="Gray"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Name="SectionTemplate">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="Button" x:Name="Button">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Name="ButtonText">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="26"/>
+        </Style>
+    </Page.Resources>
+    <Hub x:Name="Content" DataContext="{StaticResource MainViewModel}">
+        <Hub.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel Margin="0,15,0,30">
+                    <Image MaxHeight="120" Margin="10" Source="ms-appx:///Assets/IEEE-white.png"/>
+                    <TextBlock Grid.Row="1" Text="UPM Student Branch App" FontWeight="SemiBold" FontSize="30" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0"/>
+                </StackPanel>
+            </DataTemplate>
+        </Hub.HeaderTemplate>
+        <HubSection x:Name="DoorSection">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Door" Style="{StaticResource Header}"/>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel HorizontalAlignment="Center" Style="{StaticResource SectionTemplate}">
+                    <TextBlock x:Name="Welcome" TextAlignment="Center" Margin="10" Text="{Binding User.WelcomeMessage}" Style="{StaticResource Textblock}" TextWrapping="Wrap"/>
+                    <Button x:Name="Open" Style="{StaticResource Button}" Click="Open_Click">
+                        <Button.Content>
+                            <TextBlock Text="Open Door" Style="{StaticResource ButtonText}"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </DataTemplate>
+        </HubSection>
+        <HubSection x:Name="FridgeSection">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Fridge Credit" Style="{StaticResource Header}"/>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel Style="{StaticResource SectionTemplate}">
+                    <TextBlock Text="{Binding User.Credit}" Visibility="{Binding User.ValidCredit, Converter={StaticResource BooleanToVisibility}}" Foreground="{Binding User.UpdatedCredit, Converter={StaticResource BooleanToColor}}" Style="{StaticResource Textblock}" FontSize="42" FontWeight="Bold" x:Name="Credit"/>
+                    <Button x:Name="CreditButton" Style="{StaticResource Button}" Click="CreditButton_Click">
+                        <Button.Content>
+                            <TextBlock Text="Check Credit" Style="{StaticResource ButtonText}"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </DataTemplate>
+        </HubSection>
+        <HubSection x:Name="PrinterSection">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="3D Printer Status" Style="{StaticResource Header}"/>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel Style="{StaticResource SectionTemplate}">
+                    <StackPanel x:Name="PrinterStack" Visibility="{Binding PrinterStatus.ValidData, Converter={StaticResource BooleanToVisibility}}">
+                        <TextBlock Text="{Binding PrinterStatus.Status}" Style="{StaticResource PrinterStatus}" x:Name="Status"/>
+                        <TextBlock Text="{Binding PrinterStatus.FileName}" Style="{StaticResource PrinterStatus}" x:Name="FileName"/>
+                        <TextBlock Text="{Binding PrinterStatus.Completion}" Style="{StaticResource PrinterStatus}" x:Name="Completion"/>
+                        <TextBlock Text="{Binding PrinterStatus.TimeLeft}" Style="{StaticResource PrinterStatus}" x:Name="TimeLeft"/>
+                    </StackPanel>
+                    <Button x:Name="PrinterButton" Style="{StaticResource Button}" Click="PrinterButton_Click">
+                        <Button.Content>
+                            <TextBlock Text="Check Status" Style="{StaticResource ButtonText}"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </DataTemplate>
+        </HubSection>
+        <HubSection x:Name="Slic3rSection">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Slic3r Service" Style="{StaticResource Header}"/>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+                <DataTemplate>
+                <ScrollViewer VerticalScrollMode="Auto">
+                    <StackPanel Style="{StaticResource SectionTemplate}">
+                        <ComboBox x:Name="ProfilesCombo" ItemsSource="{Binding Profiles}" DisplayMemberPath="Name" SelectionChanged="ComboBox_SelectionChanged"/>
+                        <Button x:Name="CheckProfiles" Style="{StaticResource Button}" Click="CheckProfiles_Click">
+                            <Button.Content>
+                                <TextBlock Text="Check Profiles" Style="{StaticResource ButtonText}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="PickSTL" Style="{StaticResource Button}" Visibility="{Binding STLPicker.ValidFile, Converter={StaticResource BooleanToInvisibility}}" Click="PickSTL_Click">
+                            <Button.Content>
+                                <TextBlock Text="Pick STL" Style="{StaticResource ButtonText}"/>
+                            </Button.Content>
+                        </Button>
+                        <TextBlock x:Name="FileName" Text="{Binding STLPicker.Filename}" Style="{StaticResource PrinterStatus}" Visibility="{Binding STLPicker.ValidFile, Converter={StaticResource BooleanToVisibility}}"/>
+                        <Button x:Name="SendSTL" Style="{StaticResource Button}" Visibility="{Binding STLPicker.ValidFile, Converter={StaticResource BooleanToVisibility}}" Click="SendSTL_Click">
+                            <Button.Content>
+                                <TextBlock Text="Send STL" Style="{StaticResource ButtonText}"/>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+            </ScrollViewer>
+            </DataTemplate>
+        </HubSection>
+        <HubSection x:Name="LatchSection">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                        <TextBlock Text="Latch" Style="{StaticResource Header}"/>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel Style="{StaticResource SectionTemplate}">
+                    <TextBox x:Name="PairingToken" Text="{Binding User.PairingToken, Mode=TwoWay}" Style="{StaticResource TextBox}"/>
+                    <Button x:Name="PairButton" Style="{StaticResource Button}" Click="PairButton_Click">
+                        <Button.Content>
+                            <TextBlock Text="Pair" Style="{StaticResource ButtonText}"/>
+                        </Button.Content>
+                    </Button>
+                    <Button x:Name="UnpairButton" Style="{StaticResource Button}" Click="UnpairButton_Click">
+                        <Button.Content>
+                            <TextBlock Text="Unpair" Style="{StaticResource ButtonText}"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </DataTemplate>
+        </HubSection>
+    </Hub>
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <AppBarButton Icon="Save" Label="Store data" Click="AppBarButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
