@@ -58,7 +58,7 @@
         <Hub.HeaderTemplate>
             <DataTemplate>
                 <StackPanel Margin="0,15,0,30">
-                    <Image MaxHeight="120" Margin="10" Source="ms-appx:///Assets/IEEE-white.png"/>
+                    <Image MaxHeight="120" Margin="10" Source="ms-appx:///Assets/IEEE.png"/>
                     <TextBlock Grid.Row="1" Text="UPM Student Branch App" FontWeight="SemiBold" FontSize="30" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0"/>
                 </StackPanel>
             </DataTemplate>

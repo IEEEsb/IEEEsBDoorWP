@@ -25,6 +25,9 @@
     <AppxPackagedFile Include="C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\Assets\IEEE-white.png">
       <PackagePath>Assets\IEEE-white.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\Assets\IEEE.png">
+      <PackagePath>Assets\IEEE.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gregorio\Documents\Repositorios\IEEEsbWPDoor\IEEEsbWPDoor\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
