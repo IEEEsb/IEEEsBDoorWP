@@ -5,17 +5,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Windows.ApplicationModel.Activation;
-using Windows.ApplicationModel.Core;
-using Windows.Storage;
-using Windows.Storage.Pickers;
 
 namespace IEEEsbWPDoor.ViewModel
 {
-    public class MainViewModel
+	public class MainViewModel
     {
         public static MainViewModel Current { get; set; }
         public HttpRequestClient HttpRequestClient { get; set; }
